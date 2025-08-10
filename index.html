@@ -422,98 +422,86 @@
 
     /* Responsive */
     @media (max-width: 720px) {
+      .project-card {
+        width: 90vw;
+        margin: 0 auto;
+      }
       header {
-        flex-wrap: wrap;
-        gap: 12px;
-        justify-content: center;
+        padding: 12px 16px;
       }
       nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
+        gap: 14px;
       }
       #intro {
-        margin: 15vh 10px 8vh;
+        margin: 15vh 0 8vh;
       }
-      #welcome-text,
-      #typed-name {
-        font-size: 2.4rem;
+      #welcome-text, #typed-name {
+        font-size: 2.2rem;
       }
       #typed-role {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
       .glass-section {
-        padding: 30px 25px;
-        margin: 40px 10px;
-      }
-      .projects-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .project-card {
-        width: 90%;
+        padding: 28px 24px;
+        margin: 40px 12px;
       }
     }
   </style>
 </head>
 <body>
-
   <div id="progress-bar"></div>
 
   <header>
     <div class="logo">S.Yogendren</div>
     <nav>
-      <a href="#about" class="nav-link active">About</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#intro" class="active">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <button id="toggle-theme" aria-label="Toggle dark/light mode">Light Mode</button>
+    <button id="toggle-theme" aria-label="Toggle light/dark mode">Light Mode</button>
   </header>
 
   <main>
     <section id="intro">
-      <h1 id="welcome-text">Welcome to my portfolio</h1>
-      <h2 id="typed-name"></h2>
-      <h3 id="typed-role"></h3>
-    </section>
-
-    <section id="about" class="glass-section">
-      <h2>About Me</h2>
-      <p>I'm S.Yogendren, a passionate MERN Full Stack Developer with strong skills in Python and Java. I design and build scalable systems with clean code and elegant architecture.</p>
-    </section>
-
-    <section id="skills" class="glass-section">
-      <h2>Skills</h2>
-      <ul>
-        <li><i class="fab fa-react"></i> React · Vite · TailwindCSS</li>
-        <li><i class="fab fa-node-js"></i> Node.js · Express · MongoDB</li>
-        <li><i class="fab fa-python"></i> Python · Flask · FastAPI</li>
-        <li><i class="fab fa-java"></i> Java · Spring Boot</li>
-        <li><i class="fas fa-docker"></i> Docker · CI/CD pipelines</li>
-        <li><i class="fas fa-code"></i> Algorithms & Data Structures</li>
-      </ul>
+      <p id="welcome-text">Welcome to my portfolio</p>
+      <h1 id="typed-name" aria-live="polite" aria-atomic="true"></h1>
+      <h2 id="typed-role" aria-live="polite" aria-atomic="true"></h2>
     </section>
 
     <section id="projects" class="glass-section">
-      <h2>Projects</h2>
+      <h2>🚀 Projects</h2>
       <div class="projects-grid">
-        <div class="project-card" tabindex="0">
+        <div class="project-card" tabindex="0" role="article" aria-label="Project: AI Stock Predictor">
           <h3>AI Stock Predictor</h3>
           <p>Machine learning-based stock prediction using Python and TensorFlow.</p>
-          <a href="https://github.com/yourusername/ai-stock-predictor" target="_blank" class="btn" rel="noopener">View Project</a>
+          <a href="https://github.com/yourusername/ai-stock-predictor" target="_blank" rel="noopener" class="btn">View Project</a>
         </div>
-        <div class="project-card" tabindex="0">
+        <div class="project-card" tabindex="0" role="article" aria-label="Project: MERN Task Manager">
           <h3>MERN Task Manager</h3>
-          <p>Full-stack task management app using MongoDB, Express, React, and Node.js.</p>
-          <a href="https://github.com/yourusername/mern-task-manager" target="_blank" class="btn" rel="noopener">View Project</a>
+          <p>Full-stack app with MongoDB, Express, React, and Node.js.</p>
+          <a href="https://github.com/yourusername/mern-task-manager" target="_blank" rel="noopener" class="btn">View Project</a>
         </div>
-        <div class="project-card" tabindex="0">
+        <div class="project-card" tabindex="0" role="article" aria-label="Project: Java Simulation Engine">
           <h3>Java Simulation Engine</h3>
           <p>Scientific simulation framework for complex systems.</p>
-          <a href="https://github.com/yourusername/java-simulation-engine" target="_blank" class="btn" rel="noopener">View Project</a>
+          <a href="https://github.com/yourusername/java-simulation-engine" target="_blank" rel="noopener" class="btn">View Project</a>
         </div>
       </div>
+    </section>
+
+    <section id="skills" class="glass-section">
+      <h2>🛠 Skills</h2>
+      <ul>
+        <li><i class="fab fa-react" aria-hidden="true"></i> React · Vite</li>
+        <li><i class="fab fa-node-js" aria-hidden="true"></i> Node.js · Express</li>
+        <li><i class="fas fa-database" aria-hidden="true"></i> MongoDB · Mongoose</li>
+        <li><i class="fab fa-python" aria-hidden="true"></i> Python · Flask / FastAPI</li>
+        <li><i class="fab fa-java" aria-hidden="true"></i> Java · Spring (Basics)</li>
+        <li><i class="fas fa-cogs" aria-hidden="true"></i> Docker · CI/CD</li>
+        <li><i class="fas fa-code" aria-hidden="true"></i> Algorithms & Data Structures</li>
+        <li><i class="fas fa-flask" aria-hidden="true"></i> Testing & Monitoring</li>
+      </ul>
     </section>
 
     <section id="contact" class="glass-section">
@@ -528,7 +516,7 @@
       <div id="contact-info">
         <p>Email: <a href="mailto:yugabde@gmail.com">yugabde@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener">Yoga</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">Connect with me</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/yogendren-sankara-raman-544524342/" target="_blank" rel="noopener">Connect with me</a></p>
       </div>
     </section>
   </main>
@@ -553,7 +541,7 @@
 
     updateToggleText();
 
-    // Typed text animation
+    // Typed text animation with loop
     const typedName = document.getElementById('typed-name');
     const typedRole = document.getElementById('typed-role');
     const welcomeText = document.getElementById('welcome-text');
@@ -578,25 +566,44 @@
       });
     }
 
-    async function playIntro() {
-      await new Promise(res => setTimeout(res, 800));
-      welcomeText.classList.add('fade-out');
-      await new Promise(res => setTimeout(res, 1200));
-      welcomeText.style.display = 'none';
+    async function loopTyping() {
+      while (true) {
+        welcomeText.classList.add('fade-out');
+        await new Promise(res => setTimeout(res, 1200));
+        welcomeText.style.display = 'none';
 
-      await typeText(typedName, name, 150);
-      typedName.style.opacity = '1';
+        // Type name
+        await typeText(typedName, name, 150);
+        typedName.style.opacity = '1';
 
-      for (const role of roles) {
-        typedRole.style.opacity = '1';
-        await typeText(typedRole, role, 100);
-        await new Promise(res => setTimeout(res, 1300));
-        typedRole.textContent = '';
+        for (const role of roles) {
+          typedRole.style.opacity = '1';
+          await typeText(typedRole, role, 100);
+          await new Promise(res => setTimeout(res, 1300));
+          // Clear role text
+          for (let i = role.length; i >= 0; i--) {
+            typedRole.textContent = role.substring(0, i);
+            await new Promise(r => setTimeout(r, 50));
+          }
+        }
+        // Clear name and role
+        for (let i = name.length; i >= 0; i--) {
+          typedName.textContent = name.substring(0, i);
+          typedRole.textContent = '';
+          await new Promise(r => setTimeout(r, 100));
+        }
+
+        typedName.style.opacity = '0';
+        typedRole.style.opacity = '0';
+
+        welcomeText.style.display = 'block';
+        welcomeText.classList.remove('fade-out');
+
+        await new Promise(res => setTimeout(res, 1500));
       }
-      typedRole.textContent = roles[0]; // end on first role
     }
 
-    playIntro();
+    loopTyping();
 
     // Scroll progress bar
     const progressBar = document.getElementById('progress-bar');
@@ -636,7 +643,7 @@
 
       // Simulate sending message
       form.querySelector('button').disabled = true;
-      formMessage.style.color = varGet('--color-primary');
+      formMessage.style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-primary');
       formMessage.textContent = 'Sending message...';
 
       setTimeout(() => {
@@ -646,11 +653,6 @@
         form.querySelector('button').disabled = false;
       }, 2000);
     });
-
-    // Helper for CSS variable in JS
-    function varGet(name) {
-      return getComputedStyle(document.documentElement).getPropertyValue(name);
-    }
 
     // Fade in glass sections on scroll
     const glassSections = document.querySelectorAll('.glass-section');
@@ -665,7 +667,7 @@
     }
     window.addEventListener('scroll', checkSectionsVisibility);
     window.addEventListener('load', checkSectionsVisibility);
-
   </script>
 </body>
 </html>
+
